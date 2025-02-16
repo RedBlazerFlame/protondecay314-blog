@@ -133,3 +133,7 @@ Notice: This is exactly what we wanted to prove. Therefore, $$x \lt x_k$$ cannot
 ## Conclusion
 
 When working with recurrences, it is always helpful to note the special properties of the sequences and functions involved. These special properties may allow one to optimize certain DP transitions. In this article, we were introduced to one such special property: The Quadrangle Inequality. Furthermore, we learned how this property enforces monotonicity in the minima of the DP transition, which we can then exploit with Divide and Conquer to optimize $$O(n^2)$$ DP to $$O(n \log n)$$.
+
+## Acknowledgements
+
+I would like to acknowledge the NOI.PH trainers for help in answering some of my queries regarding this topic.
