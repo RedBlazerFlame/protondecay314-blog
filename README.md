@@ -4,7 +4,7 @@ A blog for my random musings. It mostly includes CompProg and Math, but I might 
 
 ## About Me
 
-Hello! I'm Gabee De Vera, commonly known on the internet as "ProtonDecay314". I'm a competitive programmer and contest mathematician. I participated in the 2024 International Olympiad in Informatics, Philippines hosted in Egypt.
+Hello! I'm Gabee De Vera, commonly known on the internet as "ProtonDecay314". I'm a Filipino competitive programmer and contest mathematician. I participated in the 2024 International Olympiad in Informatics hosted in Egypt.
 
 ![A picture of me with the IOI 2024 team](ioi-2024-picture.jpg "IOI 2024 Team Picture")
 
