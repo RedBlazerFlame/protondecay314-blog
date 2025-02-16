@@ -1,34 +1,11 @@
 # protondecay314-blog
 
-A blog for my random musings. It mostly includes CompProg and Math, but I might write about other stuff occasionally
+A blog for my random musings. It mostly includes CompProg and Math, but I might write about other stuff occasionally.
 
-Hello World!
+## About Me
 
-$$g(n) = \sum_{d | n} \mu(d) \cdot f\left(\frac{n}{d}\right)$$
+Hello! I'm Gabee De Vera, commonly known on the internet as "ProtonDecay314". I'm a competitive programmer and contest mathematician. I participated in the 2024 International Olympiad in Informatics, Philippines hosted in Egypt.
 
-```c++
-#include<bits/stdc++.h>
-using namespace std;
-typedef long long ll;
+![A picture of me with the IOI 2024 team](ioi-2024-picture.jpg "IOI 2024 Team Picture")
 
-int main() {
-    ll n;
-    cin >> n;
-
-    ll l = 0ll, r = n;
-
-    while(r - l > 1ll) {
-        ll m = (l + r) >> 1ll;
-
-        if(m * m <= n) {
-            l = m;
-        } else {
-            r = m;
-        }
-    }
-
-    cout << "floor(sqrt(n)) = " << n << endl;
-
-    return 0;
-}
-```
+I'm the third from the right in the picture above.
