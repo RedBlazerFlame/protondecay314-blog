@@ -4,7 +4,7 @@ A blog for my random musings. It mostly includes CompProg and Math, but I might 
 
 Hello World!
 
-$$g(n) = \sum_{d | n} \mu(d) \cdot $$
+$$g(n) = \sum_{d | n} \mu(d) \cdot f\left(\frac{n}{d}\right)$$
 
 ```c++
 #include<bits/stdc++.h>
