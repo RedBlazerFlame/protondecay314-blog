@@ -3,7 +3,7 @@
 
 ## Background
 
-Farrell asked me to compile some of the questions I asked in the NOI.PH server and list what I learned from these questions.
+Someone asked me to compile some of the questions I asked in the NOI.PH server and list what I learned from these questions.
 
 I have listed some of these questions. If I have an answer for it, there should be a link to a page that discusses the answer.
 
