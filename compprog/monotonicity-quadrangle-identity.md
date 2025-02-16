@@ -74,7 +74,7 @@ Sure, the cost function satisfies a special property, but why do we *care* about
 
 It turns out that the value of $$j$$ that minimizes $$f_d (i) = \min_{0 \le j \lt i} f_{d - 1}(j) + C(j, i)$$ satisfies an interesting property when $$C$$ satisfies the Quadrangle Inequality. (Try printing the values yourself for some concrete set of inputs and see if you can spot the pattern!)
 
-Denote $$x_i$$ as the value of $$j$$ that minimizes $$f_{d - 1}(j) + C(j, i)$$ for a fixed $$i$$. Then, I claim that if $$k \lt k'$$, $$x_k \le x_{k'}$$.
+Denote $$x_i$$ as the value of $$j$$ that minimizes $$f_{d - 1}(j) + C(j, i)$$ for a fixed $$i$$. Then, I claim that if $$k \lt k'$$, then $$x_k \le x_{k'}$$.
 
 In other words, the row minima move to the right as you move down the rows. Since the minima continuously move to the right, we say that they are *monotonically increasing*.
 
@@ -126,9 +126,9 @@ $$f(x_k) + C(x_k, k') - f(x) - C(x, k') \le f(x_k) + C(x_k, k) - f(x) - C(x, k) 
 
 $$f(x_k) + C(x_k, k') - f(x) - C(x, k') \le 0$$
 
-$$f(x_k) + C(x_k, k') \le f(x) - C(x, k')$$
+$$f(x_k) + C(x_k, k') \le f(x) + C(x, k')$$
 
-Notice: This is exactly what we wanted to prove. Therefore, $$x \lt x_k$$ cannot be optimal for $i = k'$, which implies that $$x_{k'} \ge x_k$$, as needed. $$\blacksquare$$
+Notice: This is exactly what we wanted to prove. Therefore, $$x \lt x_k$$ cannot be optimal for $$i = k'$$, which implies that $$x_{k'} \ge x_k$$, as needed. $$\blacksquare$$
 
 ## Conclusion
 
