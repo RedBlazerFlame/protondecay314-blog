@@ -1,4 +1,4 @@
-# On the Monotonicity of Row Minima in DP Recurrences Involving Cost Functions Satisfying the Quadrangle Identity
+# On the Monotonicity of Row Minima in DP Recurrences Involving Cost Functions Satisfying the Quadrangle Inequality
 
 By **Gabee De Vera**
 
