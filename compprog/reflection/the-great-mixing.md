@@ -26,7 +26,9 @@ Notice that the left-hand side is essentially a weighted average.
 We want to minimize $$\sum_i V_i$$ while satisfying the formula. Let's eliminate the division operation by multiplying both sides by $$\sum_i V_i$$:
 
 $$\sum_i a_i V_i = n \sum_i V_i$$
+
 $$\sum_i a_i V_i = \sum_i nV_i$$
+
 $$\sum_i (a_i - n) V_i = 0$$
 
 Let $$b_i = a_i - n$$, then we have:
@@ -51,7 +53,7 @@ We can model the space of all possibilities as a directed graph $$G$$: Each node
 
 We *know* how to find the shortest cycle in a directed graph: We simply use [breadth-first search](https://cp-algorithms.com/graph/breadth-first-search.html)!
 
-The time complexity of breadth-first search is $$O(|V| + |E|)$$.
+The time complexity of breadth-first search is $$O(\lvert V \rvert + \lvert E \rvert)$$.
 
 ### A Tiny Worry
 
@@ -79,8 +81,7 @@ Note that $$V^{*}$$ is the minimum volume needed to achieve a sum of zero.
 
 **Claim:** There is some permutation of $$s_0, s_1, s_2, \cdots$$, say $$s'_0, s'_1, s'_2, \cdots$$, such that $$-1000 \le \sum_{i = 0}^{n} s'_i \le 1000$$ for all $$0 \le n \le V^{*} - 1$$.
 
-**Proof:** PROOF
-The proof follows by construction.
+**Proof:** The proof follows by construction.
 
 Call the integers in the range $$[-1000, 1000]$$ as "good" and everything else as "bad". We want all partial sums $$-1000 \le \sum_{i = 0}^{n} s'_i \le 1000$$ to be good.
 
@@ -100,4 +101,4 @@ When $$k > 0$$, pick an element of $$s_i$$ that's negative. note that since $$-1
 
 When $$k < 0$$, pick an element of $$s_i$$ that's positive. note that since $$0 < s_i <= 1000$$ and $$-1000 <= k < 0$$, $$-1000 < s_i + k < 1000$$, so the sum is still good.
 
-Since we have found a construction such that the running sums are all good, we have successfully proved the claim ^^
+Since we have found a construction such that the running sums are all good, we have successfully proved the claim $$\blacksquare$$.
