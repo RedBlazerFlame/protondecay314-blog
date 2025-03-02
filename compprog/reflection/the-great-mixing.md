@@ -68,7 +68,23 @@ Therefore, the time complexity of this solution is $$O(I^2 + K)$$, where $$I$$ i
 
 ### What Didn't Work
 
+My first attempt at this problem involved reinterpreting the equation $$\sum_i b_i V_i = 0$$ as the following vector equation:
+
+$$\vec{b} \cdot \vec{V} = 0$$
+
+Therefore, the problem reduces to finding a nonzero vector with nonnegative integer coordinates that's orthogonal to $$\vec{b}$$ and minimizes the sum of the coordinates.
+
+There are many problems with this approach. For one, the subspace of vectors orthogonal to $$\vec{b}$$ is, in general, a hyperplane. It's difficult to conceptualize all of the lattice points that a hyperplane hits --- if you go through the math, you'll have to deal with a diophantine equation of $$K$$ variables. Add the constraints that the solution *must* have nonnegative integer coordinates, and this becomes harder. Finally, the condition that the sum of the coordinates is minimized is awkward to work with under a linear algebra formulation.
+
+In short, the idea of minimizing under all of these constraints is daunting. This suggested to me that a linear algebra solution would lead nowhere.
+
 ### Motivation Behind the Solution
+
+The solution that worked is essentially just *complete search* optimized with insights. Complete search could be reframed as searching through all possible states for an optimal solution. Then, complete search is simply a generalization of breadth-first search --- the graph consists of states as nodes and transitions between states as edges.
+
+Sometimes, it helps to think about brute force approaches. When you believe a brute force approach applies, it is useful to reframe the complete search as a breadth-first search over the graph of states. Then, making observations about the graph may lead to optimizations that make complete search tractable. 
+
+Finally, division is messy to work with. It may help to multiply both sides by a common factor to eliminate the need for division.
 
 ## Appendices
 ---
