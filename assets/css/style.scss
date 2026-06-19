@@ -1,0 +1,53 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+$nav-color: #2971c8;
+$nav-active-color: #ffffff;
+$border-color: darken($nav-color, 20%);
+
+.wrapper > header {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+}
+
+.blog_icon {
+    width: 100px;
+    display: inline;
+}
+
+body {
+    padding-top: 0px;
+}
+
+.navbar {
+    background: linear-gradient(180deg, $nav-color 0%, darken($nav-color, 5%) 100%);
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar > a {
+    padding: 10px;
+    color: white;
+}
+
+.navbar > a:not(.active) {
+    border-bottom: 2px solid $border-color;
+}
+
+.navbar > a.active {
+    border-left: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 0px;
+    padding: 10px;
+    color: black;
+    background: linear-gradient(180deg, $nav-active-color 0%, darken($nav-active-color, 5%) 100%);
+}

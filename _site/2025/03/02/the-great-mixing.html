@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Great Mixing | Proton’s Blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="The Great Mixing" />
+<meta name="author" content="Gabee De Vera" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Read the Problem Statement here" />
+<meta property="og:description" content="Read the Problem Statement here" />
+<link rel="canonical" href="http://localhost:4000/2025/03/02/the-great-mixing.html" />
+<meta property="og:url" content="http://localhost:4000/2025/03/02/the-great-mixing.html" />
+<meta property="og:site_name" content="Proton’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-02T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Great Mixing" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gabee De Vera"},"dateModified":"2025-03-02T00:00:00+08:00","datePublished":"2025-03-02T00:00:00+08:00","description":"Read the Problem Statement here","headline":"The Great Mixing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/03/02/the-great-mixing.html"},"url":"http://localhost:4000/2025/03/02/the-great-mixing.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ad6c6e2698dd98cee01ada292697f92755d7c5d1">
+    <script src="/assets/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon_io/site.webmanifest">
+<link rel="shortcut icon" href="/assets/images/favicon_io/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/favicon_io/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <nav class="navbar">
+        
+            <a href="/" >
+                Home
+            </a>
+        
+            <a href="/about" >
+                About
+            </a>
+        
+    </nav>
+    <div class="wrapper">
+      <header >
+        <img class="blog_icon" src="/assets/images/blog-icon.png">
+        <div>
+            <h1>Proton's Blog</h1>
+        
+          <p>A blog for CompProg, transit, and all things nerdy!</p>
+        
+        </div>
+        <p class="view"><a href="https://github.com/RedBlazerFlame/protondecay314-blog">View the Project on GitHub <small></small></a></p>
+        <ul>
+        
+          <li><a href="https://github.com/RedBlazerFlame/protondecay314-blog">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+
+      
+<h1>The Great Mixing (A Problem Reflection)</h1>
+
+
+<p>
+    By <strong>Gabee De Vera</strong><br>
+
+    <i>Mar 2, 2025</i>
+</p>
+
+<hr>
+
+<p><a href="https://codeforces.com/problemset/problem/788/C">Read the Problem Statement here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="basic-insights">Basic Insights</h3>
+
+<p>Let’s start with a basic insight:</p>
+<blockquote>
+  <p>There are only 1001 unique coke types, corresponding to the concentrations \(\frac{0}{1000}, \frac{1}{1000}, \frac{2}{1000}, \cdots, \frac{1000}{1000}\). Therefore, we effectively have \(k \le 1001\).</p>
+</blockquote>
+
+<h3 id="reinterpreting-the-average">Reinterpreting the Average</h3>
+
+<p>Concentration is defined as the volume of carbon dioxide divided by the total volume of coke. Therefore, we have the formula:</p>
+
+\[\dfrac{\sum_i a_i V_i}{\sum_i V_i} = n\]
+
+<p>Notice that the left-hand side is essentially a weighted average.</p>
+
+<p>We want to minimize \(\sum_i V_i\) while satisfying the formula. Let’s eliminate the division operation by multiplying both sides by \(\sum_i V_i\):</p>
+
+\[\sum_i a_i V_i = n \sum_i V_i\]
+
+\[\sum_i a_i V_i = \sum_i nV_i\]
+
+\[\sum_i (a_i - n) V_i = 0\]
+
+<p>Let \(b_i = a_i - n\), then we have:</p>
+
+\[\sum_i b_i V_i = 0\]
+
+<p>Where \(-1000 \le b_i \le 1000\).</p>
+
+<p>Thus, we have <a href="https://cp-algorithms.com/num_methods/binary_search.html">“reinterpreted the average”</a>.</p>
+
+<p>Now, we want to find an assignment of \(V_i\) such that \(\sum_i b_i V_i = 0\) and \(\sum_i V_i\) is minimized.</p>
+
+<h3 id="reframing-as-a-shortest-paths-problem">Reframing as a Shortest Paths Problem</h3>
+
+<p>The problem could be reframed as follows:</p>
+
+<blockquote>
+  <p>You are given an array of values \(B\) with elements \(b_0, b_1, b_2, \cdots b_{k - 1}\). You start with a sum \(s\) of \(0\). A move consists of setting \(s \leftarrow s + b_i\) for some \(b_i\). What is the minimum number of moves needed so that \(s\) is \(0\) once again?</p>
+</blockquote>
+
+<p>The simplest solution would be to search through all possibilities: At each point, store all the reachable values after \(n\) moves.</p>
+
+<p>We can model the space of all possibilities as a directed graph \(G\): Each node represents a possible sum, while each edge represents a possible move. Then, the optimal solution is the shortest cycle starting and ending at node \(0\).</p>
+
+<p>We <em>know</em> how to find the shortest cycle in a directed graph: We simply use <a href="https://cp-algorithms.com/graph/breadth-first-search.html">breadth-first search</a>!</p>
+
+<p>The time complexity of breadth-first search is \(O(\lvert V \rvert + \lvert E \rvert)\).</p>
+
+<h3 id="a-tiny-worry">A Tiny Worry</h3>
+
+<p>One worry you may have is that the number of nodes and edges used is too large since we need to account for abritrarily large sums.</p>
+
+<p>Thankfully, it can be shown that if an optimal solution exists, then we can rearrange the terms so that the partial sums are always in the interval \(I \in [-1000, 1000]\). This implies that we only need to consider the nodes \([-1000, 1000]\). The proof for this is shown in <a href="#appendix-a">Appendix A</a>.</p>
+
+<p>Therefore, the time complexity of this solution is \(O(I^2 + K)\), where \(I\) is the magnitude of the denominator of the concentration values (in this case, \(I = 1000\)).</p>
+
+<h2 id="reflection">Reflection</h2>
+<hr />
+
+<h3 id="what-didnt-work">What Didn’t Work</h3>
+
+<p>My first attempt at this problem involved reinterpreting the equation \(\sum_i b_i V_i = 0\) as the following vector equation:</p>
+
+\[\vec{b} \cdot \vec{V} = 0\]
+
+<p>Therefore, the problem reduces to finding a nonzero vector with nonnegative integer coordinates that’s orthogonal to \(\vec{b}\) and minimizes the sum of the coordinates.</p>
+
+<p>There are many problems with this approach. For one, the subspace of vectors orthogonal to \(\vec{b}\) is, in general, a hyperplane. It’s difficult to conceptualize all of the lattice points that a hyperplane hits — if you go through the math, you’ll have to deal with a diophantine equation of \(K\) variables. Add the constraints that the solution <em>must</em> have nonnegative integer coordinates, and this becomes harder. Finally, the condition that the sum of the coordinates is minimized is awkward to work with under a linear algebra formulation.</p>
+
+<p>In short, the idea of minimizing under all of these constraints is daunting. This suggested to me that a linear algebra solution would lead nowhere.</p>
+
+<h3 id="motivation-behind-the-solution">Motivation Behind the Solution</h3>
+
+<p>The solution that worked is essentially just <em>complete search</em> optimized with insights. Complete search could be reframed as searching through all possible states for an optimal solution. Then, complete search is simply a generalization of breadth-first search — the graph consists of states as nodes and transitions between states as edges.</p>
+
+<p>Sometimes, it helps to think about brute force approaches. When you believe a brute force approach applies, it is useful to reframe the complete search as a breadth-first search over the graph of states. Then, making observations about the graph may lead to optimizations that make complete search tractable.</p>
+
+<p>Finally, division is messy to work with. It may help to multiply both sides by a common factor to eliminate the need for division.</p>
+
+<h2 id="appendices">Appendices</h2>
+<hr />
+
+<h3 id="appendix-a">Appendix A</h3>
+
+<p><strong>Setup:</strong> Let \(s_i\) be the sequence of values in the array \(b_0, b_1, b_2, \cdots\) such that \(\sum_{i = 0}^{V^{*} - 1} s_i = 0\).</p>
+
+<p>Note that \(V^{*}\) is the minimum volume needed to achieve a sum of zero.</p>
+
+<p><strong>Claim:</strong> There is some permutation of \(s_0, s_1, s_2, \cdots\), say \(s'_0, s'_1, s'_2, \cdots\), such that \(-1000 \le \sum_{i = 0}^{n} s'_i \le 1000\) for all \(0 \le n \le V^{*} - 1\).</p>
+
+<p><strong>Proof:</strong> The proof follows by construction.</p>
+
+<p>Call the integers in the range \([-1000, 1000]\) as “good” and everything else as “bad”. We want all partial sums \(-1000 \le \sum_{i = 0}^{n} s'_i \le 1000\) to be good.</p>
+
+<p>Let the current sum be \(k\). Initially, \(k = 0\).</p>
+
+<p>If \(k &gt; 0\), there is always an element \(s_i\) in \(S\) such that \(s_i &lt; 0\). To see this, suppose, by contradiction, that all \(s_i\) in \(S\) is nonnegative and that \(k &gt; 0\). Then, adding all of the elements in \(S\) to \(k\) results in a positive value, which is a contradiction since adding all elements to \(S\) must result in 0.</p>
+
+<p><em>Mutatis mutandis</em>, if \(k &lt; 0\), there is always an element \(s_i\) in \(S\) such that \(s_i &gt; 0\).</p>
+
+<p>Now that we have the proper set-up, we can look at the construction.</p>
+
+<p>We will keep adding elements \(s_i\) from the set \(S\) as follows:</p>
+
+<p>When \(k = 0\), pick any element of \(S\) (say, \(s_i\)) then remove it from \(S\). Then, the new sum is \(k = s_i\), which is still good since \(s_i\) is good.</p>
+
+<p>When \(k &gt; 0\), pick an element of \(s_i\) that’s negative. note that since \(-1000 \le s_i &lt; 0\) and \(0 &lt; k \le 1000\), \(-1000 &lt; s_i + k &lt; 1000\), so the sum is still good.</p>
+
+<p>When \(k &lt; 0\), pick an element of \(s_i\) that’s positive. note that since \(0 &lt; s_i \le 1000\) and \(-1000 \le k &lt; 0\), \(-1000 &lt; s_i + k &lt; 1000\), so the sum is still good.</p>
+
+<p>Since we have found a construction such that the running sums are all good, we have successfully proved the claim \(\blacksquare\).</p>
+
+
+      </section>
+    </div>
+    <footer>
+    
+      <p>Project maintained by <a href="https://github.com/RedBlazerFlame">RedBlazerFlame</a></p>
+    
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>

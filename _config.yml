@@ -1,3 +1,5 @@
+title: "Proton's Blog"
+description: "A blog for CompProg, transit, and all things nerdy!"
 plugins:
   - jekyll-relative-links
 relative_links:
@@ -14,4 +16,5 @@ include:
   - PULL_REQUEST_TEMPLATE.md
 remote_theme: pages-themes/modernist@v0.2.0
 plugins:
-- jekyll-remote-theme
+  - jekyll-remote-theme
+  - jekyll-feed
