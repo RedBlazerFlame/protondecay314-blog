@@ -27,7 +27,7 @@ If you're interested in competitive programming or simply willing to read about 
 
 ![A picture of Ichika near The Hive](assets/images/ichika-ntu.jpg "Ichika near The Hive")
 
-Well, enough about me, start reading the blog [here]({{site.baseurl}}/)!
+Well, enough about me. Start reading the blog [here]({{site.baseurl}}/)!
 
 ---
 
