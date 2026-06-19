@@ -51,3 +51,7 @@ body {
     color: black;
     background: linear-gradient(180deg, $nav-active-color 0%, darken($nav-active-color, 5%) 100%);
 }
+
+.post-list > li {
+    margin-bottom: 20px;
+}

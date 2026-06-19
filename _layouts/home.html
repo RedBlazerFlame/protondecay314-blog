@@ -30,8 +30,8 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
+        {%- if post.excerpt -%}
+            {{ post.excerpt }}
         {%- endif -%}
       </li>
       {%- endfor -%}

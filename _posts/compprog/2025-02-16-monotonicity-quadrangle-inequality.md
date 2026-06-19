@@ -4,6 +4,7 @@ title: Monotonicity Induced by the Quadrangle Inequality
 longtitle: On the Monotonicity of Row Minima in DP Recurrences Involving Cost Functions Satisfying the Quadrangle Inequality
 
 author: Gabee De Vera
+excerpt: ''
 ---
 ## Intro
 

@@ -3,6 +3,7 @@ layout: post
 title: Some Questions to Ponder
 
 author: Gabee De Vera
+excerpt: ''
 ---
 
 ## Background

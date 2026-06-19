@@ -4,6 +4,7 @@ title: The Great Mixing
 longtitle: The Great Mixing (A Problem Reflection)
 
 author: Gabee De Vera
+excerpt: ''
 ---
 
 [Read the Problem Statement here](https://codeforces.com/problemset/problem/788/C)
