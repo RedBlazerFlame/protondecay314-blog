@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/protondecay314-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/protondecay314-blog/" rel="alternate" type="text/html" /><updated>2026-06-19T22:35:44+08:00</updated><id>http://localhost:4000/protondecay314-blog/feed.xml</id><title type="html">Proton’s Blog</title><subtitle>A blog for CompProg, transit, and all things nerdy!</subtitle><entry><title type="html">The Great Mixing</title><link href="http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing.html" rel="alternate" type="text/html" title="The Great Mixing" /><published>2025-03-02T00:00:00+08:00</published><updated>2025-03-02T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing.html"><![CDATA[<p><a href="https://codeforces.com/problemset/problem/788/C">Read the Problem Statement here</a></p>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="basic-insights">Basic Insights</h3>
+
+<p>Let’s start with a basic insight:</p>
+<blockquote>
+  <p>There are only 1001 unique coke types, corresponding to the concentrations \(\frac{0}{1000}, \frac{1}{1000}, \frac{2}{1000}, \cdots, \frac{1000}{1000}\). Therefore, we effectively have \(k \le 1001\).</p>
+</blockquote>
+
+<h3 id="reinterpreting-the-average">Reinterpreting the Average</h3>
+
+<p>Concentration is defined as the volume of carbon dioxide divided by the total volume of coke. Therefore, we have the formula:</p>
+
+\[\dfrac{\sum_i a_i V_i}{\sum_i V_i} = n\]
+
+<p>Notice that the left-hand side is essentially a weighted average.</p>
+
+<p>We want to minimize \(\sum_i V_i\) while satisfying the formula. Let’s eliminate the division operation by multiplying both sides by \(\sum_i V_i\):</p>
+
+\[\sum_i a_i V_i = n \sum_i V_i\]
+
+\[\sum_i a_i V_i = \sum_i nV_i\]
+
+\[\sum_i (a_i - n) V_i = 0\]
+
+<p>Let \(b_i = a_i - n\), then we have:</p>
+
+\[\sum_i b_i V_i = 0\]
+
+<p>Where \(-1000 \le b_i \le 1000\).</p>
+
+<p>Thus, we have <a href="https://cp-algorithms.com/num_methods/binary_search.html">“reinterpreted the average”</a>.</p>
+
+<p>Now, we want to find an assignment of \(V_i\) such that \(\sum_i b_i V_i = 0\) and \(\sum_i V_i\) is minimized.</p>
+
+<h3 id="reframing-as-a-shortest-paths-problem">Reframing as a Shortest Paths Problem</h3>
+
+<p>The problem could be reframed as follows:</p>
+
+<blockquote>
+  <p>You are given an array of values \(B\) with elements \(b_0, b_1, b_2, \cdots b_{k - 1}\). You start with a sum \(s\) of \(0\). A move consists of setting \(s \leftarrow s + b_i\) for some \(b_i\). What is the minimum number of moves needed so that \(s\) is \(0\) once again?</p>
+</blockquote>
+
+<p>The simplest solution would be to search through all possibilities: At each point, store all the reachable values after \(n\) moves.</p>
+
+<p>We can model the space of all possibilities as a directed graph \(G\): Each node represents a possible sum, while each edge represents a possible move. Then, the optimal solution is the shortest cycle starting and ending at node \(0\).</p>
+
+<p>We <em>know</em> how to find the shortest cycle in a directed graph: We simply use <a href="https://cp-algorithms.com/graph/breadth-first-search.html">breadth-first search</a>!</p>
+
+<p>The time complexity of breadth-first search is \(O(\lvert V \rvert + \lvert E \rvert)\).</p>
+
+<h3 id="a-tiny-worry">A Tiny Worry</h3>
+
+<p>One worry you may have is that the number of nodes and edges used is too large since we need to account for abritrarily large sums.</p>
+
+<p>Thankfully, it can be shown that if an optimal solution exists, then we can rearrange the terms so that the partial sums are always in the interval \(I \in [-1000, 1000]\). This implies that we only need to consider the nodes \([-1000, 1000]\). The proof for this is shown in <a href="#appendix-a">Appendix A</a>.</p>
+
+<p>Therefore, the time complexity of this solution is \(O(I^2 + K)\), where \(I\) is the magnitude of the denominator of the concentration values (in this case, \(I = 1000\)).</p>
+
+<h2 id="reflection">Reflection</h2>
+<hr />
+
+<h3 id="what-didnt-work">What Didn’t Work</h3>
+
+<p>My first attempt at this problem involved reinterpreting the equation \(\sum_i b_i V_i = 0\) as the following vector equation:</p>
+
+\[\vec{b} \cdot \vec{V} = 0\]
+
+<p>Therefore, the problem reduces to finding a nonzero vector with nonnegative integer coordinates that’s orthogonal to \(\vec{b}\) and minimizes the sum of the coordinates.</p>
+
+<p>There are many problems with this approach. For one, the subspace of vectors orthogonal to \(\vec{b}\) is, in general, a hyperplane. It’s difficult to conceptualize all of the lattice points that a hyperplane hits — if you go through the math, you’ll have to deal with a diophantine equation of \(K\) variables. Add the constraints that the solution <em>must</em> have nonnegative integer coordinates, and this becomes harder. Finally, the condition that the sum of the coordinates is minimized is awkward to work with under a linear algebra formulation.</p>
+
+<p>In short, the idea of minimizing under all of these constraints is daunting. This suggested to me that a linear algebra solution would lead nowhere.</p>
+
+<h3 id="motivation-behind-the-solution">Motivation Behind the Solution</h3>
+
+<p>The solution that worked is essentially just <em>complete search</em> optimized with insights. Complete search could be reframed as searching through all possible states for an optimal solution. Then, complete search is simply a generalization of breadth-first search — the graph consists of states as nodes and transitions between states as edges.</p>
+
+<p>Sometimes, it helps to think about brute force approaches. When you believe a brute force approach applies, it is useful to reframe the complete search as a breadth-first search over the graph of states. Then, making observations about the graph may lead to optimizations that make complete search tractable.</p>
+
+<p>Finally, division is messy to work with. It may help to multiply both sides by a common factor to eliminate the need for division.</p>
+
+<h2 id="appendices">Appendices</h2>
+<hr />
+
+<h3 id="appendix-a">Appendix A</h3>
+
+<p><strong>Setup:</strong> Let \(s_i\) be the sequence of values in the array \(b_0, b_1, b_2, \cdots\) such that \(\sum_{i = 0}^{V^{*} - 1} s_i = 0\).</p>
+
+<p>Note that \(V^{*}\) is the minimum volume needed to achieve a sum of zero.</p>
+
+<p><strong>Claim:</strong> There is some permutation of \(s_0, s_1, s_2, \cdots\), say \(s'_0, s'_1, s'_2, \cdots\), such that \(-1000 \le \sum_{i = 0}^{n} s'_i \le 1000\) for all \(0 \le n \le V^{*} - 1\).</p>
+
+<p><strong>Proof:</strong> The proof follows by construction.</p>
+
+<p>Call the integers in the range \([-1000, 1000]\) as “good” and everything else as “bad”. We want all partial sums \(-1000 \le \sum_{i = 0}^{n} s'_i \le 1000\) to be good.</p>
+
+<p>Let the current sum be \(k\). Initially, \(k = 0\).</p>
+
+<p>If \(k &gt; 0\), there is always an element \(s_i\) in \(S\) such that \(s_i &lt; 0\). To see this, suppose, by contradiction, that all \(s_i\) in \(S\) is nonnegative and that \(k &gt; 0\). Then, adding all of the elements in \(S\) to \(k\) results in a positive value, which is a contradiction since adding all elements to \(S\) must result in 0.</p>
+
+<p><em>Mutatis mutandis</em>, if \(k &lt; 0\), there is always an element \(s_i\) in \(S\) such that \(s_i &gt; 0\).</p>
+
+<p>Now that we have the proper set-up, we can look at the construction.</p>
+
+<p>We will keep adding elements \(s_i\) from the set \(S\) as follows:</p>
+
+<p>When \(k = 0\), pick any element of \(S\) (say, \(s_i\)) then remove it from \(S\). Then, the new sum is \(k = s_i\), which is still good since \(s_i\) is good.</p>
+
+<p>When \(k &gt; 0\), pick an element of \(s_i\) that’s negative. note that since \(-1000 \le s_i &lt; 0\) and \(0 &lt; k \le 1000\), \(-1000 &lt; s_i + k &lt; 1000\), so the sum is still good.</p>
+
+<p>When \(k &lt; 0\), pick an element of \(s_i\) that’s positive. note that since \(0 &lt; s_i \le 1000\) and \(-1000 \le k &lt; 0\), \(-1000 &lt; s_i + k &lt; 1000\), so the sum is still good.</p>
+
+<p>Since we have found a construction such that the running sums are all good, we have successfully proved the claim \(\blacksquare\).</p>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[Read the Problem Statement here]]></summary></entry><entry><title type="html">Monotonicity Induced by the Quadrangle Inequality</title><link href="http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality.html" rel="alternate" type="text/html" title="Monotonicity Induced by the Quadrangle Inequality" /><published>2025-02-16T00:00:00+08:00</published><updated>2025-02-16T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality.html"><![CDATA[<h2 id="intro">Intro</h2>
+
+<p>Consider a function \(f_d(x)\) and a cost function \(C(x,y)\). Here, \(f\) usually contains the DP state.</p>
+
+<p>In general, we want to consider how to compute recurrences of the form:</p>
+
+\[f_{d + 1}(i) = \min_{0 \le j \lt i} f_{d} (j) + C(j, i)\]
+
+<p>Over the values \(f_{d + 1} (0), f_{d + 1}(1), f_{d + 1}(2), ..., f_{d + 1}(n - 1)\).</p>
+
+<p>This is a common DP pattern in Competitive Programming. To see this, we will consider an example problem.</p>
+
+<h2 id="a-sample-problem">A Sample Problem</h2>
+
+<p><em>Read the problem statement here: <a href="https://atcoder.jp/contests/dp/tasks/dp_z">https://atcoder.jp/contests/dp/tasks/dp_z</a></em></p>
+
+<p>We will consider a <em>variant</em> of this problem: What is the minimum cost assuming you do <em>exactly</em> \(d\) hops?</p>
+
+<p>Suppose that \(n = N\) and that \(1 \le n, d \le 5000\).</p>
+
+<p>In short, the problem asks you to compute \(f_d (n)\), where \(f\) satisfies:</p>
+
+\[f_d (i) = \min_{0 \le j \lt i} f_{d - 1} (j) + C(j, i)\]
+
+<p>Here, \(C(j, i) = (h_i - h_j)^2\), and \(i \lt j \implies h_i \le h_j\).</p>
+
+<p>Naive computation of this recurrence gives an \(O(dn^2)\) algorithm. Could we do better?</p>
+
+<p>It turns out that we can do better! There is a certain property of \(C\) we can exploit that allows us to solve this problem in \(O(d n \log n)\). I won’t discuss it here for now, since it’s outside the scope of this blog, but if you’re curious, look up “Divide and Conquer DP”.</p>
+
+<p>What is this property of \(C\), and why does it matter?</p>
+
+<h2 id="the-quadrangle-inequality">The Quadrangle Inequality</h2>
+
+<p>Suppose that \(L \le l \le r \le R\). Then, we say that \(C\) satisfies the Quadrangle Inequality iff:</p>
+
+\[C(L, r) + C(l, R) \le C(l, r) + C(L, R)\]
+
+<p>For example, when \(C(j, i) = (h_i - h_j)^2\), you can show that it satisfies the quadrangle inequality as follows. First, let’s start with the trivial inequalities \(h_l \ge h_L\) and \(h_R \ge h_r\). Thus, we have \(h_l - h_L \ge 0\) and \(h_R - h_r \ge 0\). Multiplying both identities together, we get:</p>
+
+\[\left(h_l - h_L\right) \left(h_R - h_r\right) \ge 0\]
+
+<p>Expanding…</p>
+
+\[h_L \left(h_r - h_R\right) + h_l \left(h_R - h_r\right) \ge 0\]
+
+\[h_L h_r + h_l h_R \ge h_l h_r + h_L h_R\]
+
+\[- 2h_L h_r - 2h_l h_R \le - 2h_l h_r - 2h_L h_R\]
+
+\[h_L^2 - 2h_L h_r + h_r^2 + h_l^2 - 2h_l h_R + h_R^2 \le h_l^2 - 2h_l h_r + h_r^2 + h_L^2 - 2h_L h_R + h_R^2\]
+
+\[\left(h_L - h_r\right)^2 + \left(h_l - h_R\right)^2 \le \left(h_l - h_r\right)^2 + \left(h_L - h_R\right)^2\]
+
+<p>Finally, substituting \(C(i, j) = \left(h_i, h_j\right)^2\),</p>
+
+\[C(L, r) + C(l, R) \le C(l, r) + C(L, R) \ \blacksquare\]
+
+<p>Thus, the cost function in Frog 3 satisfies the Quadrangle Inequality.</p>
+
+<p>Sure, the cost function satisfies a special property, but why do we <em>care</em> about this property?</p>
+
+<h2 id="monotonicity-of-row-minima">Monotonicity of Row Minima</h2>
+
+<p>It turns out that the value of \(j\) that minimizes \(f_d (i) = \min_{0 \le j \lt i} f_{d - 1}(j) + C(j, i)\) satisfies an interesting property when \(C\) satisfies the Quadrangle Inequality. (Try printing the values yourself for some concrete set of inputs and see if you can spot the pattern!)</p>
+
+<p>Denote \(x_i\) as the value of \(j\) that minimizes \(f_{d - 1}(j) + C(j, i)\) for a fixed \(i\). Then, I claim that if \(k \lt k'\), then \(x_k \le x_{k'}\).</p>
+
+<p>In other words, the row minima move to the right as you move down the rows. Since the minima continuously move to the right, we say that they are <em>monotonically increasing</em>.</p>
+
+<p>Why does this phenomenon occur?</p>
+
+<h2 id="proof-of-monotonicity">Proof of Monotonicity</h2>
+
+<p>Greedy insights can only take you so far—if left unproven, it may compromise the correctness of your algorithm. Therefore, we will <em>prove</em> that, if \(C\) satisfies the Quadrangle Inequality, we have \(x_k \le x_{k'}\).</p>
+
+<p>Let’s simply denote \(f_d\) as \(f\)—We’re only going to consider a single value of \(d\) anyways. First, we know that \(j = x_k\) minimizes \(f(j) + C(j, k)\) for a fixed \(k\). Therefore,</p>
+
+\[f(x_k) + C(x_k, k) \le f(x) + C(x, k)\]
+
+<p>Now, we want to show that \(x_{k'} \ge x_{k}\). Equivalently, we want to show that all \(x \lt x_k\) <em>cannot</em> be optimal for \(i = k'\). Notice that if we can show the following:</p>
+
+\[x \lt x_k \implies f(x_k) + C(x_k, k') \le f(x) + C(x, k')\]
+
+<p>… we immediately prove that all \(x \lt x_k\) cannot be optimal since \(j = x_k\) achieves a smaller sum than \(j = x\).</p>
+
+<p>Now, our problem reduces to the following: Show that</p>
+
+\[x \lt x_k \implies f(x_k) + C(x_k, k') \le f(x) + C(x, k')\]
+
+<p>First, note that \(x \lt x_k \lt k \lt k'\). Therefore, by the Quadrangle Identity, we have:</p>
+
+\[C(x, k) + C(x_k, k') \le C(x_k, k) + C(x, k')\]
+
+<p>Equivalently,</p>
+
+\[C(x_k, k') - C(x, k') \le C(x_k, k) - C(x, k) \text{  (Eq. 1)}\]
+
+<p>Adding \(f(x_k) - f(x)\) to both sides of Equation 1,</p>
+
+\[f(x_k) + C(x_k, k') - f(x) - C(x, k') \le f(x_k) + C(x_k, k) - f(x) - C(x, k) \text{  (Eq. 2)}\]
+
+<p>Also, we know that:</p>
+
+\[f(x_k) + C(x_k, k) \le f(x) + C(x, k)\]
+
+<p>Equivalently,</p>
+
+\[f(x_k) + C(x_k, k) - f(x) - C(x, k) \le 0 \text{  (Eq. 3)}\]
+
+<p>Using Equation 3, we can rewrite Equation 2 as follows:</p>
+
+\[f(x_k) + C(x_k, k') - f(x) - C(x, k') \le f(x_k) + C(x_k, k) - f(x) - C(x, k) \le 0\]
+
+\[f(x_k) + C(x_k, k') - f(x) - C(x, k') \le 0\]
+
+\[f(x_k) + C(x_k, k') \le f(x) + C(x, k')\]
+
+<p>Notice: This is exactly what we wanted to prove. Therefore, \(x \lt x_k\) cannot be optimal for \(i = k'\), which implies that \(x_{k'} \ge x_k\), as needed. \(\blacksquare\)</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When working with recurrences, it is always helpful to note the special properties of the sequences and functions involved. These special properties may allow one to optimize certain DP transitions. In this article, we were introduced to one such special property: The Quadrangle Inequality. Furthermore, we learned how this property enforces monotonicity in the minima of the DP transition, which we can then exploit with Divide and Conquer to optimize \(O(n^2)\) DP to \(O(n \log n)\).</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>I would like to acknowledge the NOI.PH trainers for help in answering some of my queries regarding this topic.</p>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[Intro]]></summary></entry><entry><title type="html">Some Questions to Ponder</title><link href="http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries.html" rel="alternate" type="text/html" title="Some Questions to Ponder" /><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries.html"><![CDATA[<h2 id="background">Background</h2>
+
+<p>Someone asked me to compile some of the questions I had about CompProg and list what I learned from these questions.</p>
+
+<p>I have listed some of these questions. If I have an answer for it, there should be a link to a page that discusses the answer.</p>
+
+<h2 id="questions">Questions</h2>
+
+<ol>
+  <li>How do you compute the <code class="language-plaintext highlighter-rouge">n</code>th term of an order-<code class="language-plaintext highlighter-rouge">k</code> linear recurrence faster than \(O(k^3 \log n)\)?</li>
+  <li>In general, what is the order of an element of \(GL(n, \mathbb{Z} / p \mathbb{Z})\)?</li>
+  <li>How can you compute min-plus convolution in subquadratic time?</li>
+  <li>How do you prove the correctness of Dijkstra’s algorithm?</li>
+</ol>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[Background]]></summary></entry></feed>

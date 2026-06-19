@@ -1,5 +1,6 @@
 title: "Proton's Blog"
 description: "A blog for CompProg, transit, and all things nerdy!"
+baseurl: /protondecay314-blog
 plugins:
   - jekyll-relative-links
 relative_links:

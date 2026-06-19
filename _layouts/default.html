@@ -19,14 +19,14 @@
   <body>
     <nav class="navbar">
         {% for item in site.data.navigation %}
-            <a href="{{ item.link }}" {% if page.url == item.link %}class="active"{% endif %}>
+            <a href="{{site.baseurl}}{{ item.link }}" {% if page.url == item.link %}class="active"{% endif %}>
                 {{ item.name }}
             </a>
         {% endfor %}
     </nav>
     <div class="wrapper">
       <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
-        <img class="blog_icon" src="/assets/images/blog-icon.png">
+        <img class="blog_icon" src="{{site.baseurl}}/assets/images/blog-icon.png">
         <div>
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
         {% if site.description or site.github.project_tagline %}
