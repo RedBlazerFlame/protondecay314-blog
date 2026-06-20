@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-21T00:57:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Proton’s Blog</title><subtitle>A blog for CompProg, transit, and all things nerdy!</subtitle><entry><title type="html">Geoguessing Locations in Tanner’s Video “Japan’s Wild Train Station by the Ocean”</title><link href="http://localhost:4000/2026/06/21/geoguessing-tanner-video-1.html" rel="alternate" type="text/html" title="Geoguessing Locations in Tanner’s Video “Japan’s Wild Train Station by the Ocean”" /><published>2026-06-21T00:00:00+08:00</published><updated>2026-06-21T00:00:00+08:00</updated><id>http://localhost:4000/2026/06/21/geoguessing-tanner-video-1</id><content type="html" xml:base="http://localhost:4000/2026/06/21/geoguessing-tanner-video-1.html"><![CDATA[<h2 id="background-information-on-the-video">Background Information on the Video</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/protondecay314-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/protondecay314-blog/" rel="alternate" type="text/html" /><updated>2026-06-21T01:04:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/feed.xml</id><title type="html">Proton’s Blog</title><subtitle>A blog for CompProg, transit, and all things nerdy!</subtitle><entry><title type="html">Geoguessing Locations in Tanner’s Video “Japan’s Wild Train Station by the Ocean”</title><link href="http://localhost:4000/protondecay314-blog/2026/06/21/geoguessing-tanner-video-1.html" rel="alternate" type="text/html" title="Geoguessing Locations in Tanner’s Video “Japan’s Wild Train Station by the Ocean”" /><published>2026-06-21T00:00:00+08:00</published><updated>2026-06-21T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2026/06/21/geoguessing-tanner-video-1</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2026/06/21/geoguessing-tanner-video-1.html"><![CDATA[<h2 id="background-information-on-the-video">Background Information on the Video</h2>
 
 <p>Before you continue with this blog, I recommend watching the video below.</p>
 
@@ -20,14 +20,14 @@
 
 <h2 id="the-attack-of-the-pheasant">The Attack of the Pheasant</h2>
 
-<p><img src="/assets/images/pheasant-attack-1.png" alt="Pheasant Attack" />
+<p><img src="/protondecay314-blog/assets/images/pheasant-attack-1.png" alt="Pheasant Attack" />
 <strong>Figure 1:</strong> Tanner Gets Chased by a Pheasant</p>
 
 <p>At around the time <a href="https://youtu.be/e86PRRAZIiU?t=593">9:53</a> in the video, Google Maps betrayed Tanner. It sent him to a small walkway. Little did he know, a <a href="https://en.wikipedia.org/wiki/Green_pheasant">Green Pheasant</a>—the national bird of Japan—ferociously guarded these steps. As he approached, the pheasant resolved to chase Tanner away! The entire two-minute sequence became an inside joke—a meme of sorts—within Tanner’s community.</p>
 
 <p>In fact, one year later, Tanner fans still make memes about this moment. Some fans even go as far as to make their channels pheasant-themed!</p>
 
-<p><img src="/assets/images/tanner-birb-comments.png" alt="Pheasant Comments" />
+<p><img src="/protondecay314-blog/assets/images/tanner-birb-comments.png" alt="Pheasant Comments" />
 <strong>Figure 2:</strong> Comments Referencing the Pheasant Incident</p>
 
 <p>Needless to say, this piece of Tanner history is perhaps one of the most important and well-known.</p>
@@ -42,7 +42,7 @@
 
 <p>First things first: I set out to find the exact place where Tanner encountered the pheasant. I was oblivious to the fact that Tanner linked to this location in the description of the video, so I had to resort to some Geoguessr trickery to find it. (had I read the description, I would’ve saved 30 minutes 😅)</p>
 
-<p><img src="/assets/images/tanner-google-maps-image.png" alt="Tanner Google Maps Image" />
+<p><img src="/protondecay314-blog/assets/images/tanner-google-maps-image.png" alt="Tanner Google Maps Image" />
 <strong>Figure 3:</strong> A Google Map of the Locality From Tanner’s Video</p>
 
 <p>At around <a href="https://youtu.be/e86PRRAZIiU?t=584">9:44</a> in the video, we obtain an important clue: a Google Map of the local area of the site of the incident. The map gives us major clues of the location. I observed the following:</p>
@@ -57,7 +57,7 @@
 
 <p>This looks promising! But can we be sure this place is exactly where Tanner encountered the pheasant? In fact, we can. The following clip in the video shows the exact same sign that we can find in the street view above.</p>
 
-<p><img src="/assets/images/tanner-enouraterasu-sign.png" alt="Tanner Sign" />
+<p><img src="/protondecay314-blog/assets/images/tanner-enouraterasu-sign.png" alt="Tanner Sign" />
 <strong>Figure 4:</strong> The Same Sign Found in the Video</p>
 
 <p>And there we go! We have the exact spot of the Tanner pheasant incident!</p>
@@ -66,14 +66,14 @@
 
 <h2 id="finding-the-exact-site-of-the-train-jumpscare">Finding the Exact Site of the Train Jumpscare</h2>
 
-<p><img src="/assets/images/tanner-train-jumpscare.png" alt="Tanner Train Jumpscare" />
+<p><img src="/protondecay314-blog/assets/images/tanner-train-jumpscare.png" alt="Tanner Train Jumpscare" />
 <strong>Figure 5:</strong> Tanner Gets Jumpscared by a Train</p>
 
 <p><a href="https://youtu.be/e86PRRAZIiU?t=803">Later in the video</a>, Tanner encounters a train crossing on his way to get dinner. By sheer coincidence, the warning bells in the crossing ring as he steps foot on it. The bird-traumatized Tanner was understantably startled by this incident. At the very least, he was greeted by a northbound JR freight train on the Tokaido Main Line tracks—a pleasant surprise for this train fan!</p>
 
 <p>Knowing the exact location of the pheasant attack made this second part a lot easier. It turns out that the markings for this rail crossing are visible from satellite imagery!</p>
 
-<p><img src="/assets/images/tanner-train-crossing-satellite.png" alt="Railroad Crossing Satellite Imagery" />
+<p><img src="/protondecay314-blog/assets/images/tanner-train-crossing-satellite.png" alt="Railroad Crossing Satellite Imagery" />
 <strong>Figure 6:</strong> Railroad Crossing Markings From Satellite Imagery</p>
 
 <iframe src="https://www.google.com/maps/embed?pb=!4v1781972054216!6m8!1m7!1sn5vT9IveG01r5Vf-SdhwKw!2m2!1d35.19161139200586!2d139.1371516187516!3f255.78266122743338!4f11.634508856155136!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -88,7 +88,7 @@
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.59179969542!2d139.13582532852269!3d35.193761639217556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019bb421c8933db%3A0xa74a4c574396f915!2sKisaku!5e1!3m2!1sen!2sph!4v1781972847157!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<p><img src="/assets/images/tanner-duck-soba.png" alt="Tanner Duck Soba" />
+<p><img src="/protondecay314-blog/assets/images/tanner-duck-soba.png" alt="Tanner Duck Soba" />
 <strong>Figure 7:</strong> Tanner Eats Duck Soba</p>
 
 <p>In the end, Tanner got even, and I got a list of potential places to visit if ever I do return to Japan!</p>
@@ -106,7 +106,7 @@
       <p>Big nerd, I know! <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[Overanalyzing a video where a train YouTuber gets chased by a bird...]]></summary></entry><entry><title type="html">Transit Treasures: Art Appreciation in a Fast-Paced Society</title><link href="http://localhost:4000/2026/06/19/cc0001-essay.html" rel="alternate" type="text/html" title="Transit Treasures: Art Appreciation in a Fast-Paced Society" /><published>2026-06-19T00:00:00+08:00</published><updated>2026-06-19T00:00:00+08:00</updated><id>http://localhost:4000/2026/06/19/cc0001-essay</id><content type="html" xml:base="http://localhost:4000/2026/06/19/cc0001-essay.html"><![CDATA[<h2 id="foreword">Foreword</h2>
+</div>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[Overanalyzing a video where a train YouTuber gets chased by a bird...]]></summary></entry><entry><title type="html">Transit Treasures: Art Appreciation in a Fast-Paced Society</title><link href="http://localhost:4000/protondecay314-blog/2026/06/19/cc0001-essay.html" rel="alternate" type="text/html" title="Transit Treasures: Art Appreciation in a Fast-Paced Society" /><published>2026-06-19T00:00:00+08:00</published><updated>2026-06-19T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2026/06/19/cc0001-essay</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2026/06/19/cc0001-essay.html"><![CDATA[<h2 id="foreword">Foreword</h2>
 
 <p>The following essay is my submission for the course <a href="https://www.ntu.edu.sg/docs/librariesprovider76/course-outlines/ug---other-courses/web-cc0001---inquiry-and-comm-in-an-interdisc-world---270122.pdf?sfvrsn=8cd0306_3">CC0001: Inquiry and Communication in an Interdisciplinary World</a> in Nanyang Technological University (NTU). I took this module as an opportunity to explore academic writing for humanities research (it’s also a requirement for undergraduates). I was blessed to have this essay nominated for publication for the <a href="https://blogs.ntu.edu.sg/pioneerroad/">Pioneer Road Journal</a>. While the essay ultimately was not published, I improved a lot in choosing the right vocabulary and ensuring cohesion in my writing.</p>
 
@@ -114,12 +114,12 @@
 
 <h2 id="transit-treasures-art-appreciation-in-a-fast-paced-society">Transit Treasures: Art Appreciation in a Fast-Paced Society</h2>
 
-<p><img src="/assets/images/cc0001-pic-1.jpg" alt="The Crowd of Commuters at Dhoby Ghaut MRT During Rush Hour" title="The Crowd of Commuters at Dhoby Ghaut MRT During Rush Hour" />
+<p><img src="/protondecay314-blog/assets/images/cc0001-pic-1.jpg" alt="The Crowd of Commuters at Dhoby Ghaut MRT During Rush Hour" title="The Crowd of Commuters at Dhoby Ghaut MRT During Rush Hour" />
 <strong>Figure 1:</strong> The Crowd of Commuters at Dhoby Ghaut MRT During Rush Hour</p>
 
 <p>A faint woosh hums through the platform. Two eyes of light emerge from the distance, accompanied by the crescendoing clatter of the Alstom R151’s wheels. The train screeches to a halt. The glass doors open. Commuters rush to the swiftly turning escalators like a turbulent stream. On the concourse, alighting passengers merge with hurried steps. A cacophony of footsteps reverberates against the granite floor. A card reader beeps. A fare gate swings open. A commuter rushes toward the closing train doors. His eyebrows furrow. A “tsk” of frustration escapes from his breath. I can feel the agony of waiting two minutes for the next train.</p>
 
-<p><img src="/assets/images/cc0001-pic-2.png" alt="A Dhoby Washing Clothes Juxtaposed With Modern Landmarks" title="A Dhoby Washing Clothes Juxtaposed With Modern Landmarks" />
+<p><img src="/protondecay314-blog/assets/images/cc0001-pic-2.png" alt="A Dhoby Washing Clothes Juxtaposed With Modern Landmarks" title="A Dhoby Washing Clothes Juxtaposed With Modern Landmarks" />
 <strong>Figure 2:</strong> A Dhoby Washing Clothes Juxtaposed With Modern Landmarks</p>
 
 <p>In contrast, still pieces of art bear witness to the fleeting movements in the surroundings: One depicting the rocks and leaves of the earth on towering gypsum columns, another illustrating a Dhoby surrounded by malls, hotels, and offices with the words “Dhoby Ghaut” in a cartoon art style. On the floor above, artists sit at pop-up booths, patiently waiting for hours on end for customers to pass by from nearby food stalls. They await the opportunity to share their art prints of imaginary road trips through vast cornfields. Despite the constant stream of workers passing by the art pieces and booths, the stream of footsteps ceases to halt. Not a single individual stops to look!</p>
@@ -162,7 +162,7 @@
 
 <p>Guan, H. (2023). <em>Slow space: reifying time to renew the interior as cultural register</em> [Master’s thesis, Pratt Institute]. ProQuest Dissertations &amp; Theses Global. <a href="https://ntu-sp.primo.exlibrisgroup.com/permalink/65NTU_INST/1j8pmes/cdi_proquest_journals_2864179390">https://ntu-sp.primo.exlibrisgroup.com/permalink/65NTU_INST/1j8pmes/cdi_proquest_journals_2864179390</a></p>
 
-<p>Sng, E. (2025, July 19). <em>Don’t have a creative hobby? Here’s why you should paint, sew or bake</em>. Channel News Asia. <a href="https://www.channelnewsasia.com/today/mental-health-matters/creative-hobby-personal-leisure-arts-crafts-photography-mental-health-5239751">https://www.channelnewsasia.com/today/mental-health-matters/creative-hobby-personal-leisure-arts-crafts-photography-mental-health-5239751</a></p>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[The following essay is my submission for the course CC0001: Inquiry and Communication in an Interdisciplinary World in Nanyang Technological University...]]></summary></entry><entry><title type="html">The Great Mixing</title><link href="http://localhost:4000/2025/03/02/the-great-mixing.html" rel="alternate" type="text/html" title="The Great Mixing" /><published>2025-03-02T00:00:00+08:00</published><updated>2025-03-02T00:00:00+08:00</updated><id>http://localhost:4000/2025/03/02/the-great-mixing</id><content type="html" xml:base="http://localhost:4000/2025/03/02/the-great-mixing.html"><![CDATA[<p><a href="https://codeforces.com/problemset/problem/788/C">Read the Problem Statement here</a></p>
+<p>Sng, E. (2025, July 19). <em>Don’t have a creative hobby? Here’s why you should paint, sew or bake</em>. Channel News Asia. <a href="https://www.channelnewsasia.com/today/mental-health-matters/creative-hobby-personal-leisure-arts-crafts-photography-mental-health-5239751">https://www.channelnewsasia.com/today/mental-health-matters/creative-hobby-personal-leisure-arts-crafts-photography-mental-health-5239751</a></p>]]></content><author><name>Gabee De Vera</name></author><summary type="html"><![CDATA[The following essay is my submission for the course CC0001: Inquiry and Communication in an Interdisciplinary World in Nanyang Technological University...]]></summary></entry><entry><title type="html">The Great Mixing</title><link href="http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing.html" rel="alternate" type="text/html" title="The Great Mixing" /><published>2025-03-02T00:00:00+08:00</published><updated>2025-03-02T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/03/02/the-great-mixing.html"><![CDATA[<p><a href="https://codeforces.com/problemset/problem/788/C">Read the Problem Statement here</a></p>
 
 <h2 id="solution">Solution</h2>
 
@@ -277,7 +277,7 @@
 
 <p>When \(k &lt; 0\), pick an element of \(s_i\) that’s positive. note that since \(0 &lt; s_i \le 1000\) and \(-1000 \le k &lt; 0\), \(-1000 &lt; s_i + k &lt; 1000\), so the sum is still good.</p>
 
-<p>Since we have found a construction such that the running sums are all good, we have successfully proved the claim \(\blacksquare\).</p>]]></content><author><name>Gabee De Vera</name></author></entry><entry><title type="html">Monotonicity Induced by the Quadrangle Inequality</title><link href="http://localhost:4000/2025/02/16/monotonicity-quadrangle-inequality.html" rel="alternate" type="text/html" title="Monotonicity Induced by the Quadrangle Inequality" /><published>2025-02-16T00:00:00+08:00</published><updated>2025-02-16T00:00:00+08:00</updated><id>http://localhost:4000/2025/02/16/monotonicity-quadrangle-inequality</id><content type="html" xml:base="http://localhost:4000/2025/02/16/monotonicity-quadrangle-inequality.html"><![CDATA[<h2 id="intro">Intro</h2>
+<p>Since we have found a construction such that the running sums are all good, we have successfully proved the claim \(\blacksquare\).</p>]]></content><author><name>Gabee De Vera</name></author></entry><entry><title type="html">Monotonicity Induced by the Quadrangle Inequality</title><link href="http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality.html" rel="alternate" type="text/html" title="Monotonicity Induced by the Quadrangle Inequality" /><published>2025-02-16T00:00:00+08:00</published><updated>2025-02-16T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/02/16/monotonicity-quadrangle-inequality.html"><![CDATA[<h2 id="intro">Intro</h2>
 
 <p>Consider a function \(f_d(x)\) and a cost function \(C(x,y)\). Here, \(f\) usually contains the DP state.</p>
 
@@ -403,7 +403,7 @@
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-<p>I would like to acknowledge the NOI.PH trainers for help in answering some of my queries regarding this topic.</p>]]></content><author><name>Gabee De Vera</name></author></entry><entry><title type="html">Some Questions to Ponder</title><link href="http://localhost:4000/2025/02/15/proton-queries.html" rel="alternate" type="text/html" title="Some Questions to Ponder" /><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><id>http://localhost:4000/2025/02/15/proton-queries</id><content type="html" xml:base="http://localhost:4000/2025/02/15/proton-queries.html"><![CDATA[<h2 id="background">Background</h2>
+<p>I would like to acknowledge the NOI.PH trainers for help in answering some of my queries regarding this topic.</p>]]></content><author><name>Gabee De Vera</name></author></entry><entry><title type="html">Some Questions to Ponder</title><link href="http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries.html" rel="alternate" type="text/html" title="Some Questions to Ponder" /><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><id>http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries</id><content type="html" xml:base="http://localhost:4000/protondecay314-blog/2025/02/15/proton-queries.html"><![CDATA[<h2 id="background">Background</h2>
 
 <p>Someone asked me to compile some of the questions I had about CompProg and list what I learned from these questions.</p>
 
