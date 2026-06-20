@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Geoguessing Locations in Tanner's Video \"Japan's Wild Train Station by the Ocean\""
+title: "Geoguessing Locations in a Train YouTuber's Video"
 
 author: Gabee De Vera
 excerpt: "Overanalyzing a video where a train YouTuber gets chased by a bird..."
