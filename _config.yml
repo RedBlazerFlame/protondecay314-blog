@@ -1,6 +1,7 @@
 title: "Proton's Blog"
 description: "A blog for CompProg, transit, and all things nerdy!"
 baseurl: /protondecay314-blog
+timezone: Asia/Manila
 plugins:
   - jekyll-relative-links
 relative_links:

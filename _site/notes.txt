@@ -1,7 +1,0 @@
-- Local Testing: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
-- Setting up a Jekyll Site: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
-
-to serve locally: bundle exec jekyll serve --baseurl ''
-
-you can also remove the --baseurl
-if you want to simulate linking on github pages
