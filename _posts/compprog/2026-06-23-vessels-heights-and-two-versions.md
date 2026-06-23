@@ -46,7 +46,7 @@ Thus, $$k$$ is the cutoff point, and the sum simplifies to:
 
 $$ a_i = \sum_{l = i}^{k - 1} \max(a_{i, i + 1, ..., l}) + \sum_{l = k}^{i - 2} \max(a_{l + 1, l + 2, ..., i - 1}) $$
 
-But the value $$k$$ constant for all $$i$$! Hence, if we can precompute $$\sum_{l = i}^{k - 1} \max(a_{i, i + 1, ..., l})$$ and $$\sum_{l = k}^{i - 2} \max(a_{l + 1, l + 2, ..., i - 1})$$ in $$O(f(n))$$, we can solve the full problem in $$O(\max(n, f(n)))$$!
+But the value $$k$$ is constant for all $$i$$! Hence, if we can precompute $$\sum_{l = i}^{k - 1} \max(a_{i, i + 1, ..., l})$$ and $$\sum_{l = k}^{i - 2} \max(a_{l + 1, l + 2, ..., i - 1})$$ in $$O(f(n))$$, we can solve the full problem in $$O(\max(n, f(n)))$$!
 
 # An $$O(n \log^2 (n))$$ Solution
 
@@ -370,7 +370,7 @@ Instead of using a segment tree for this particular problem, it turns out to be 
 
 [^1]: See page 40 of [this handout](https://redblazerflame.github.io/reboot-materials/compprog-materials/noiph-modules/ds3.pdf) for more information.
 
-In short, we may maintain a stack of running maxima in a stack. Then, when we insert a new element, we pop off all smaller elements in the stack first, then push the new element. This works because the monotonic stack (at least, for this problem) maintains the *invariant* that the *elements of the stack are nondecreasing from left to right*. Further, each element is pushed at most once and popped at most once. Even if we pop off multiple elements in one go, the number of operations remains at most $$O(n)$$ by amortization[^1].
+We may maintain a struct of running maxima in a stack. Then, when we insert a new element, we pop off all smaller elements in the stack first, then push the new element. This works because the monotonic stack (at least, for this problem) maintains the *invariant* that the *elements of the stack are nondecreasing from left to right*. Further, each element is pushed at most once and popped at most once. Even if we pop off multiple elements in one go, the number of operations remains at most $$O(n)$$ by amortization[^1].
 
 For this problem in particular, we do have to maintain the current sum. This turns out to be doable if we augment the stack with information about the indices of its elements.
 
